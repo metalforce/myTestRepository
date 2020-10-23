@@ -31,10 +31,10 @@ class Arena {
 };
 
 class Robot {
-    constructor(name) {
+    constructor(name, health, damage) {
         this.name = name;
-        this.health = 1000;
-        this.damage = 50;
+        this.health = health;
+        this.damage = damage;
     }
 
     incomingDamage(damage) {
@@ -50,5 +50,58 @@ class Robot {
     }
 };
 
+
+class Heavy extends Robot {
+    constructor(name) {
+        super(name, 1000, 100);
+        this.armor = 25;
+    }
+
+    incomingDamage(damage) {
+        this.health = this.health - (damage * (1 - this.armor / 100));
+    }
+};
+
+class Assault extends Robot {
+    constructor(name) {
+        super(name, 450, 300);
+        this.crit = 30;
+    }
+
+    outgoingDamage() {
+        let random = Math.random() * 100;
+        if(random > this.crit) {
+            return this.damage;
+        } else {
+            return this.damage * 2;
+        }
+    }
+};
+
+class Light extends Robot {
+    constructor(name) {
+        super(name, 600, 200);
+        this.agility = 50;
+    }
+
+    incomingDamage(damage) {
+        let dodge = Math.random() * 100;
+        if(dodge > this.agility) {
+            this.health = this.health - damage;
+        }
+    }
+};
+
 const game = new Arena();
 game.startGame();
+
+// let heavyRobot = new Heavy();
+// heavyRobot.incomingDamage(100);
+// console.log(heavyRobot);
+
+// let assault = new Assault('Hren');
+// console.log(assault.outgoingDamage());
+
+// let light = new Light('Hren');
+// light.incomingDamage(100)
+// console.log(light);

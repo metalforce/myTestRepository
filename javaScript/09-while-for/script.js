@@ -62,8 +62,6 @@ while (true) {
 
     if (num === null || num > 100) {
         break;
-    } else {
-        continue;
     }
 }
 

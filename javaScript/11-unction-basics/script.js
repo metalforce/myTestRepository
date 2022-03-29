@@ -59,7 +59,7 @@ function checkAge(age) {
 // min(1, 1) == 1
 
 function min(a, b) {
-    return a > b ? b : a;
+    return Math.min(a, b);
 }
 
 console.log(min(35, 144));
@@ -76,13 +76,7 @@ console.log(min(35, 144));
 // P.S. В этой задаче функция обязана поддерживать только натуральные значения n, т.е. целые от 1 и выше.
 
 function pow(x, n) {
-    let result = x;
-
-    for (let i = 1; i < n; i++) {
-        result = Math.pow(x, n);
-    }
-
-    return result;
+    return Math.pow(x, n);
 }
 
 const x = prompt("Введите x: ", "");

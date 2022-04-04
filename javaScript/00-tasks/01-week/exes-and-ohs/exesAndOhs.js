@@ -5,7 +5,7 @@ function XO(str) {
     let x = '';
     let o = '';
 
-    for (let value of str) {
+    for (const value of str) {
         if (value.toLowerCase() === 'x') {
             x += value;
         } else if (value.toLowerCase() === 'o') {

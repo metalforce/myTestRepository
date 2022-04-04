@@ -3,8 +3,8 @@
 
 function printerError(s) {
     let errors = 0;
-    for (let i = 0; i < s.length; i++) {
-        if (s[i] > 'm') errors++;
+    for (let i of s) {
+        if (i > 'm') errors++;
     }
     return `${errors}/${s.length}`;
 }

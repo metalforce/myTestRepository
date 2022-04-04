@@ -5,15 +5,15 @@ function XO(str) {
     let x = '';
     let o = '';
 
-    for (let i = 0; i < str.length; i++) {
-        if (str[i].toLowerCase() === 'x') {
-            x += str[i];
-        } else if (str[i].toLowerCase() === 'o') {
-            o += str[i];
+    for (let value of str) {
+        if (value.toLowerCase() === 'x') {
+            x += value;
+        } else if (value.toLowerCase() === 'o') {
+            o += value;
         }
     }
 
-    return x.length === o.length ? true : false;
+    return x.length === o.length;
 }
 
 const string = "xxOoOx";

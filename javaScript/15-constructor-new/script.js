@@ -39,8 +39,8 @@ console.log(a == b); // true
 
 function Calculator() {
     this.read = function () {
-        this.c = +prompt("a?", 0);
-        this.d = +prompt("b?", 0);
+        this.c = +prompt("c?", 0);
+        this.d = +prompt("d?", 0);
     };
     this.sum = function () {
         return this.c + this.d;

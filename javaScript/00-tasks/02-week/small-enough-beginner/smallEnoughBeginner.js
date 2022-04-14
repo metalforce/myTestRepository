@@ -12,7 +12,7 @@ console.log(smallEnough(arr, 150));
 // ----------------------------------------------------------- //
 
 function smallEnough2(a, limit) {
-    for (let i of a) {
+    for (const i of a) {
         if (i > limit) return false;
     }
     return true;
